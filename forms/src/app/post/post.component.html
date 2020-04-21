@@ -1,0 +1,18 @@
+
+<div class="row">
+    <div class="col-lg-4">
+        <form action="" class="form-group">
+            <label for="">Enter Text</label>
+            <input type="text" class="form-control" (keyup.enter)="createPost(title)" #title>
+        </form>
+
+        <ul class="list-group">
+            <li *ngFor="let p of players" class="list-group-item">
+                
+                <button class="btn-sm btn btn-primary" (click)="updatePost(p)">Update</button>
+                <button class="btn-sm btn btn-danger" (click)="deletePost(p)">Delete</button>
+                {{p.title}}
+            </li>
+        </ul>
+    </div>
+</div>

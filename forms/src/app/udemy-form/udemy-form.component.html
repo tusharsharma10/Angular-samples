@@ -1,0 +1,57 @@
+<div class="section">
+    <div class="d-flex justify-content-center">
+        <div class="row">
+            <div class="col-xs-6">
+               
+               <!-- Implementing Template forms  -->
+               
+               
+               <!-- 1. ngForm directive used on every form tag-->
+
+                <form ngForm #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+                    <div class="form-group">
+                        <label for="courseName">Course Name</label>
+                        
+                        <!-- 2.  ngModel directive used on every input   -->
+                        <input #inpCourse="ngModel" ngModel type="text" name="courseName" id="courseName"
+                            class="form-control" required minlength="5" (change)="log(inpCourse)">
+                           
+                           
+                            <div class="alert alert-danger" *ngIf = "inpCourse.touched && !inpCourse.valid">
+                                <div *ngIf="inpCourse.errors.required">Please enter the course name!</div>
+                                <div *ngIf="inpCourse.errors.minlength">Minimum length of course name is {{inpCourse.errors.minlength.requiredLength}}</div>
+                            </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select ngModel #category="ngModel" name="category" id="category" class="form-control">
+                            <option value="0"></option>
+                            <option *ngFor="let x of samplelist" [value]="x.id"> {{x.name}} </option>
+                        </select>
+                        <div class="alert alert-danger" *ngIf=" category.touched && category.value == 0">
+                            Please select a value from drop down list
+                        </div>
+                    </div>
+
+                    <div class="checkbox">
+
+                        <label for="">
+                            <input ngModel #guarantee="ngModel" type="checkbox" name="guarantee">
+                            30 day money-back guarantee
+                        </label>
+
+                    </div>
+
+                    <p>
+                        {{f.value|json}}
+                    </p>
+
+                    <button class="btn btn-primary" [disabled]="!f.valid">Create</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

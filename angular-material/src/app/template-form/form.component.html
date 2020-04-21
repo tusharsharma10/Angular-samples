@@ -1,0 +1,12 @@
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-4" id="skuform">
+            <form action="" class="form-group" #f="ngForm" (ngSubmit)="onSubmit(f)">
+                <label for="">SKU</label>
+                <input type="text" class="form-control" placeholder="SKU" name="sku" ngModel>
+                <button class="btn btn-primary btn-block mt-3" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

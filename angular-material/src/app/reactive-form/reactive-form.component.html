@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+       
+       
+        <div class="col-lg-4" id="skuform">
+            
+            <!-- Mandatory 1.[formGroup]="myFormGroup" -->
+            <div *ngIf="productName" class="alert-primary alert">The product is {{productName}}</div>
+            <form action="" class="form-group" [formGroup]="myFormGroup" 
+            (ngSubmit)="onSubmit(myFormGroup)">
+               
+            
+            <label for="">SKU</label>
+            <!-- Mandatory 2.formControlName="sku" -->
+            <input type="text" class="form-control"   placeholder="SKU" 
+                   formControlName="sku"     name="sku"    >
+                
+                   <div *ngIf="sku.touched && sku.invalid" class="alert alert-warning ">
+                       <div *ngIf="sku.errors.required">SKU is required</div>
+                       <div *ngIf="sku.errors.invalidSku">SKU should start from 123</div>
+                       <div *ngIf="sku.errors.notUnique">SKU name already taken</div>
+                   </div>
+                   
+                   <label for="" class="mt-2">Product</label>
+                   <input type="text" class="form-control"   placeholder="Product" 
+                   formControlName="productfield"     name="productfield"  [(ngModel)]="productName" >
+                
+                   <div *ngIf="productfield.touched && productfield.invalid" class="alert alert-warning ">
+                       <div *ngIf="productfield.errors.required">Product is required</div>
+                       
+                       <div *ngIf="productfield.errors.notUnique">Product name already taken</div>
+                   </div>
+                   
+                   
+                   
+                   <button class="btn btn-primary btn-block mt-3" type="submit">Submit</button>
+            
+            
+            </form>
+        </div>
+    
+    
+    </div>
+</div>
