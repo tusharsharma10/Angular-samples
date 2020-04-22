@@ -8,11 +8,15 @@ import {MatSliderModule} from '@angular/material/slider';
 import { FormComponent } from './template-form/form.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import {HttpClientModule} from '@angular/common/http';
+import { HttpDemoComponent } from './http-demo/http-demo.component'
+
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    HttpDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     BrowserAnimationsModule,
     MatSliderModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
