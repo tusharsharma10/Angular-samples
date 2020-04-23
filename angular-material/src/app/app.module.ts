@@ -11,12 +11,26 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpDemoComponent } from './http-demo/http-demo.component'
 
+
+import { LearnObservableComponent } from './observable/learn-observable/learn-observable.component';
+import { HomeComponent } from './routing/home/home.component';
+import { ArchiveComponent } from './routing/archive/archive.component';
+import { NotFoundComponent } from './routing/not-found/not-found.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     ReactiveFormComponent,
-    HttpDemoComponent
+    HttpDemoComponent,
+   
+    LearnObservableComponent,
+   
+    HomeComponent,
+   
+    ArchiveComponent,
+   
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
